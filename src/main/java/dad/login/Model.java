@@ -1,7 +1,5 @@
 package dad.login;
 
-import org.apache.commons.codec.digest.DigestUtils;
-
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
@@ -26,8 +24,7 @@ public class Model {
 	}
 	
 	public final String getPassword() {
-		String passwordMD5 = DigestUtils.md5Hex(this.passwordProperty().get()).toUpperCase();
-		return passwordMD5;
+		return this.passwordProperty().get();
 	}
 	
 	public final void setPassword(final String password) {

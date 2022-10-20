@@ -33,7 +33,6 @@ public class View extends GridPane {
 		buttonBox.setAlignment(Pos.CENTER);
 		buttonBox.setSpacing(5);
 
-		//GridPane root = new GridPane();
 		this.addRow(0, new Label("Usuario: "), usuario);
 		this.addRow(1, new Label("Contraseña: "), password);
 		this.addRow(2, new Label(""), ldap);
