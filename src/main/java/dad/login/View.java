@@ -11,15 +11,23 @@ import javafx.scene.layout.HBox;
 
 public class View extends GridPane {
 
-	private TextField usuario = new TextField();
-	private PasswordField password = new PasswordField();
-	private CheckBox ldap = new CheckBox("Usar LDAP");
-	private Button acceder = new Button("Acceder");
-	private Button cancelar = new Button("Cancelar");
+	private TextField usuario;
+	private PasswordField password;
+	private CheckBox ldap;
+	private Button acceder;
+	private Button cancelar;
 
 	public View() {
 		super();
+
+		usuario = new TextField();
+		password = new PasswordField();
+		ldap = new CheckBox("Usar LDAP");
+		acceder = new Button("Acceder");
+		cancelar = new Button("Cancelar");
 		
+		usuario.setPromptText("Nombre de usuario");
+		password.setPromptText("Contraseña de usuario");
 		
 		HBox buttonBox = new HBox(acceder, cancelar);
 		buttonBox.setAlignment(Pos.CENTER);
