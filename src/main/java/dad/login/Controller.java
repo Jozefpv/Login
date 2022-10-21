@@ -20,7 +20,7 @@ public class Controller {
 		// bindings
 		model.usuarioProperty().bind(view.getUsuario().textProperty());
 		model.passwordProperty().bind(view.getPassword().textProperty());
-
+		
 		// listener
 		view.getAcceder().setOnAction(e -> onAccederAction(e));
 		view.getCancelar().setOnAction(e -> onCancelarAction(e));
@@ -47,6 +47,7 @@ public class Controller {
 				alert.setHeaderText("Acceso permitido");
 				alert.setContentText("Las credenciales son válidas");
 				alert.showAndWait();
+				onCancelarAction(e);
 			} else {
 				Alert alert = new Alert(AlertType.ERROR);
 				alert.setTitle("Iniciar sesión");

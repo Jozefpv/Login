@@ -6,6 +6,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 
@@ -14,7 +15,7 @@ public class View extends GridPane {
 	private TextField usuario;
 	private PasswordField password;
 	private CheckBox ldap;
-	private Button acceder;
+	private ToggleButton acceder;
 	private Button cancelar;
 
 	public View() {
@@ -23,9 +24,13 @@ public class View extends GridPane {
 		usuario = new TextField();
 		password = new PasswordField();
 		ldap = new CheckBox("Usar LDAP");
-		acceder = new Button("Acceder");
+		acceder = new ToggleButton("Acceder");
 		cancelar = new Button("Cancelar");
 		
+		usuario.setFocusTraversable(false);
+		password.setFocusTraversable(false);
+		ldap.setFocusTraversable(false);
+		acceder.requestFocus();
 		usuario.setPromptText("Nombre de usuario");
 		password.setPromptText("Contraseña de usuario");
 		
@@ -42,6 +47,8 @@ public class View extends GridPane {
 		this.setVgap(5);
 		this.setHgap(5);
 		this.setAlignment(Pos.CENTER);
+		
+	
 
 
 	}
@@ -58,7 +65,7 @@ public class View extends GridPane {
 		return ldap;
 	}
 
-	public Button getAcceder() {
+	public ToggleButton getAcceder() {
 		return acceder;
 	}
 
